@@ -23,5 +23,3 @@ Create an initializationOperator that chooses the 10 most common letters for a r
 Create an initializationOperator that uses an existing lock from a commercially available lock.
 - Compare the scores of the existing locks with the solution produced by the GA
 
-
-Collect configurations from existing locks, and compare the scores with scores from the GA.
