@@ -14,8 +14,6 @@ Add additional local optimization heuristics to try to improve the performance o
 
 Experiment with other aspects of the genetic algorithm set up to try to improve system performance.
 
-Research question: Look at ways of establishing lower bounds on the travelling salesman path problem.
-
 Create an initializationOperator that chooses the 10 most common letters for each word position
 - Compare the score of this greedy solution with the solution produced by the GA
 
