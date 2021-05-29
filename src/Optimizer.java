@@ -8,7 +8,7 @@ public class Optimizer {
     *  PARAMETERS TO CONTROL THE OPTIMIZATION PROCESS
 	**************************************************/
 	static int SEED = 4; // A seed for the random number generator to produce consistent results
-	public static Random prng; // The prng that should be used throughout the optimizatio process
+	public static Random prng; // The prng that should be used throughout the optimization process
 	public static int VERBOSITY = 0; // A variable that controls how much output the optimization
 									// process produces
 	static int populationSize = 40; // The size of a generation in the GA

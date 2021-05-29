@@ -10,15 +10,27 @@ public class Solution {
 	int[] wheelSizes = new int[WHEEL_COUNT]; // The number of letters currently selected for each wheel
 	int[] wheelMasks = new int[WHEEL_COUNT]; // A mask where bit i is set if the ith letter in alphabet is on 
 	                                         // a wheel
-	Integer score; // The fitness of the lock, or null if the fitness still needs to be calculated.
-	
+	//Integer score; // The fitness of the lock, or null if the fitness still needs to be calculated.
+	Double score; // The fitness of the lock, or null if the fitness still needs to be calculated.
+
+//	/**
+//	 * Get the fitness of the lock configuration
+//	 * @return a score, which is currently the number of words that can be made from the
+//	 *         lock configuration
+//	 */
+//	int getScore() {
+//		if (score == null)
+//			score = Dictionary.score(this);
+//		return score;
+//	}
+
 	/**
 	 * Get the fitness of the lock configuration
-	 * @return a score, which is currently the number of words that can be made from the 
+	 * @return a score, which is currently the total weight of words that can be made from the
 	 *         lock configuration
 	 */
-	int getScore() {
-		if (score == null) 
+	double getScore() {
+		if (score == null)
 			score = Dictionary.score(this);
 		return score;
 	}

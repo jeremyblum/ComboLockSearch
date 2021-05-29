@@ -90,7 +90,7 @@ public class Population {
 				int times = Optimizer.prng.nextInt(maxMutations[j]);
 				for (int t = 0; t < times; t++) {
 					//solution = mutation.run(children[i]); // This would be another way to generate the mutations by always
-															// starting with the best mutatation seen so far
+															// starting with the best mutation seen so far
 					solution = mutation.run(solution);
 					if (solution.getScore() > children[i].getScore()) {
 						children[i] = solution;
@@ -246,7 +246,8 @@ public class Population {
 	 */
 	private ResultCode insert(Solution solution) {
 		if (populationSet.contains(solution)) return ResultCode.DUPLICATE;
-		int score = solution.getScore();
+		//int score = solution.getScore();
+		double score = solution.getScore();
 		populationList.add(solution);
 		populationSet.add(solution);
 		if (bestSolutionSoFar == null || bestSolutionSoFar.getScore() < score) {
