@@ -1,6 +1,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 /**
  * A class with static methods that represent a collection of words. 
@@ -14,6 +16,7 @@ public class Dictionary {
 	static int[][] words; // words[i][j] contains the integer value of the jth letter in the ith word
 	static double[] word_count; // frequency of words[i] derived from the Google Web Trillion Word Corpus
 								// word_count[i] = [actual count derived from Google]/[least common word]
+	static Map<Integer,Integer>[] commonLetters;
 	
 	/**
 	 * Load the dictionary
@@ -47,6 +50,7 @@ public class Dictionary {
 		sc.close();
 		words = new int[rawWords.size()][wordSize];
 		word_count = new double[rawWords.size()];
+		commonLetters = new Map[wordSize];
 		//double smallest_count = (double) rawWords_count.get(rawWords_count.size() - 1); // holds the count of the least common word
 		for (int i = 0; i < rawWords.size(); i++) {
 			for (int j = 0; j < wordSize; j++) {
@@ -55,6 +59,10 @@ public class Dictionary {
 					letter = rawWords.get(i).charAt(j) - 'a' + 1;
 				}
 				words[i][j] = letter;
+				if(commonLetters[j] == null){
+					commonLetters[j] = new HashMap<Integer,Integer>();
+				}
+				commonLetters[j].put(letter, commonLetters[j].getOrDefault(letter, 0) + 1); //keeps the position and the count of how many times a letter has been seen in a word
 			}
 			//word_count[i] = rawWords_count.get(i) / smallest_count;
 			word_count[i] = 1.0;

@@ -15,9 +15,9 @@ public class Optimizer {
 	static int generations = 1_000; // The number of generations in the optimization process
 	
 	// The operators used to produce the initial solutions
-	static InitializationOperator[] initOps = { new InitOpRandom(), new InitOpChooseWords()};
+	static InitializationOperator[] initOps = { new InitOpRandom(), new InitOpChooseWords(), new InitOpCommonLetters()};
 	// The weight that determines how likely each initialization operator will be used
-	static double[] initOpWeights = {1.0,1.0};
+	static double[] initOpWeights = {1.0,1.0,1.0};
 	
 	// A list of mutation operators to apply to the solutions
 	static MutationOperator[] mutationOperators = { new MutateChooseLetterFromWord()};
