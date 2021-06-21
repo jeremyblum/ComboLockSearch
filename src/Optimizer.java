@@ -76,6 +76,7 @@ public class Optimizer {
 		System.out.println("Min: " + min);
 		System.out.println("Max: " + max);
 		System.out.println("Mean: " + mean);
+		System.out.println("Median: " + median);
 		System.out.println("Standard Deviation: " + stdDev);
 
 
